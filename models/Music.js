@@ -11,7 +11,11 @@ const musicSchema = schema({
     },
     music_sheet:{
         type: Object
-    }
+    },
+    reg_date:{
+        type: Date,
+        default: Date.now
+    },
 });
 
 module.exports = mongoose.model("Music", musicSchema);

@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const schedule = require('node-schedule');
+const https = require('https');
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -67,6 +69,15 @@ app.use(function(err, req, res, next) {
 
 // heroku port 설정
 const port = process.env.PORT || 3000;
+
+/**
+ * Heroku sleep 방지용
+ */
+schedule.scheduleJob('*/10 * * * *', () => {
+    https.get('https://moca-music.herokuapp.com/');
+
+    console.log('Heroku sleep 방지용 신호를 보냈습니다.');
+});
 
 app.listen(port, () => {
     console.log("Music Sheet app listening on port 3000!");

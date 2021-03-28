@@ -5,6 +5,6 @@ const ctrl = require("./music.ctrl");
 
 router.get("/", ctrl.list);
 router.post("/", ctrl.create);
-// router.delete("/", ctrl.removeLunch);
+router.delete("/:id", ctrl.removeSheet);
 
 module.exports = router;
