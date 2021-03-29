@@ -93,8 +93,34 @@ const removeSheet = async (req, res) => {
     }
 };
 
+/**
+ * 악보 추가
+ */
+const entranceRoom = async (req, res) => {
+    if (!req.body) {
+        return res.status(400).json({
+            message: '데이터가 없습니다.'
+        });
+    }
+
+    const findData = {
+        room_name: req.body.roomName,
+        room_pass: req.body.roomPass
+    }
+
+    const data = await Music.findOne(findData);
+
+    if (!data) {
+        return res.status(404).json({
+            message: '해당하는 방이 없습니다.'
+        });
+    }
+    return res.status(200).json();
+};
+
 module.exports = {
     list,
     create,
-    removeSheet
+    removeSheet,
+    entranceRoom
 };
