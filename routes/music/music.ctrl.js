@@ -94,7 +94,7 @@ const removeSheet = async (req, res) => {
 };
 
 /**
- * 악보 추가
+ * 방 입장
  */
 const entranceRoom = async (req, res) => {
     if (!req.body) {
@@ -115,7 +115,7 @@ const entranceRoom = async (req, res) => {
             message: '해당하는 방이 없습니다.'
         });
     }
-    return res.status(200).json();
+    return res.status(200).json(data);
 };
 
 module.exports = {
