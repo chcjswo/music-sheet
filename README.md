@@ -10,7 +10,6 @@ npm install
 ## 사용 예제
 ```
 npm run start
-http://localhost:3000
 ```
 
 ## 업데이트 내역
