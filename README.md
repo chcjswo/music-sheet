@@ -9,6 +9,7 @@ npm install
 
 ## 사용 예제
 ```
+npm run start
 http://localhost:3000
 ```
 
