@@ -112,7 +112,7 @@ const entranceRoom = async (req, res) => {
 
     if (!data) {
         return res.status(404).json({
-            message: '해당하는 방이 없습니다.'
+            message: '방 이름 또는 패스워드를 확인해 주세요.'
         });
     }
     return res.status(200).json(data);
