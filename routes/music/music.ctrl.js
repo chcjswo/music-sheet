@@ -36,6 +36,7 @@ const create = async (req, res) => {
         room_name: req.body.roomName,
         room_pass: req.body.roomPass,
         music_sheet: req.body.musicSheet,
+        memo: req.body.memo,
         reg_date: regDate
     }
 
@@ -44,7 +45,7 @@ const create = async (req, res) => {
     });
 
     if (data) {
-        return res.status(400).json({
+        return res.status(409).json({
             message: '이름 등록된 방이름입니다.'
         });
     }
@@ -79,7 +80,7 @@ const removeSheet = async (req, res) => {
         });
 
         if (!result) {
-            return res.status(204).json({
+            return res.status(404).json({
                 message: '삭제할 악보가 없습니다.'
             });
         }

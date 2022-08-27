@@ -2,17 +2,20 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const musicSchema = schema({
-    room_name:{
+    room_name: {
         type: String,
         unique: true
     },
-    room_pass:{
+    room_pass: {
         type: String
     },
-    music_sheet:{
+    music_sheet: {
         type: Object
     },
-    reg_date:{
+    memo: {
+        type: String
+    },
+    reg_date: {
         type: Date,
         default: Date.now
     },
