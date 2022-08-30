@@ -12,6 +12,9 @@ const musicSchema = schema({
     music_sheet: {
         type: Object
     },
+    video_url: {
+        type: String
+    },
     memo: {
         type: String
     },
