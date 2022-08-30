@@ -36,6 +36,7 @@ const create = async (req, res) => {
         room_name: req.body.roomName,
         room_pass: req.body.roomPass,
         music_sheet: req.body.musicSheet,
+        video_url: req.body.video_url,
         memo: req.body.memo,
         reg_date: regDate
     }
