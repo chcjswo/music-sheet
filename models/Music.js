@@ -18,6 +18,9 @@ const musicSchema = schema({
     memo: {
         type: String
     },
+    random_string: {
+        type: String
+    },
     reg_date: {
         type: Date,
         default: Date.now

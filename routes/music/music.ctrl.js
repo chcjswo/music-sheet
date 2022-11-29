@@ -1,4 +1,5 @@
 const Music = require('../../models/Music');
+const utils = require('../../common/utils');
 
 /**
  * 리스트
@@ -38,6 +39,7 @@ const create = async (req, res) => {
         music_sheet: req.body.musicSheet,
         video_url: req.body.video_url,
         memo: req.body.memo,
+        random_string: utils.getGuid(),
         reg_date: regDate
     }
 
