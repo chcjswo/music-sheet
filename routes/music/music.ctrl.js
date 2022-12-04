@@ -122,9 +122,34 @@ const entranceRoom = async (req, res) => {
     return res.status(200).json(data);
 };
 
+/**
+ * 랜덤 문자열로 방 입장
+ */
+const entranceRoomByRandomString = async (req, res) => {
+    if (!req.body) {
+        return res.status(400).json({
+            message: '데이터가 없습니다.'
+        });
+    }
+
+    const findData = {
+        random_string: req.body.randomString
+    }
+
+    const data = await Music.findOne(findData);
+
+    if (!data) {
+        return res.status(404).json({
+            message: '랜덤 문자열을 확인해 주세요.'
+        });
+    }
+    return res.status(200).json(data);
+};
+
 module.exports = {
     list,
     create,
     removeSheet,
-    entranceRoom
+    entranceRoom,
+    entranceRoomByRandomString,
 };
